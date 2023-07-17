@@ -15,7 +15,7 @@ RegisterNetEvent("CheckEulen", function()
     end
 end)
 RegisterNetEvent("BanEvent")
-AddEventHandler("BanEvent", function(ticks)
+AddEventHandler("BanEvent", function()
     local _source = tonumber(source)
     local player_ping = GetPlayerPing(_source)
     if player_ping > 500 then
@@ -23,10 +23,10 @@ AddEventHandler("BanEvent", function(ticks)
         DropPlayer(_source, "Maximum ping exceed rejoin to server")
     else
         print(_source, "Eulen Detected ("..player_ping..")")
-		if fiveguardbans = false then
+	if fiveguardbans = false then
             DropPlayer(_source, "Eulen Detected")
-		else
-		    exports[fiveguardname]:fg_BanPlayer(_source, "Eulen detected", true)
-		end
+	else
+	    exports[fiveguardname]:fg_BanPlayer(_source, "Eulen detected", true)
+	end
     end
 end)
