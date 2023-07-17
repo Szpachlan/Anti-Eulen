@@ -23,10 +23,10 @@ AddEventHandler("BanEvent", function()
         DropPlayer(_source, "Maximum ping exceed rejoin to server")
     else
         print(_source, "Eulen Detected ("..player_ping..")")
-	if fiveguardbans = false then
+        if not fiveguardbans then
             DropPlayer(_source, "Eulen Detected")
-	else
-	    exports[fiveguardname]:fg_BanPlayer(_source, "Eulen detected", true)
-	end
+        else
+            exports[fiveguardname]:fg_BanPlayer(_source, "Eulen detected", true)
+        end
     end
 end)
